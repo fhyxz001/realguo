@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-
-import 'search_input.dart';
-import 'app_layout.dart';
 import 'package:flutter/services.dart';
+
+import 'app_layout.dart';
+import 'search_input.dart';
 
 /// 遥控区域之间的方向越界出口：没有接管者时保持默认焦点遍历行为。
 KeyEventResult _remoteExit(VoidCallback? action, {bool handled = false}) {

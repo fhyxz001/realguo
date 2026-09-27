@@ -6,17 +6,17 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:path_provider/path_provider.dart';
 
-import 'core_bridge.dart';
-import 'app_theme.dart';
 import 'app_layout.dart';
+import 'app_theme.dart';
 import 'background_downloads.dart';
+import 'core_bridge.dart';
+import 'lan_screen.dart';
 import 'local_store.dart';
 import 'profiles_screen.dart';
 import 'remote_widgets.dart';
+import 'resource_settings_screen.dart';
 import 'sources_screen.dart';
 import 'widgets.dart';
-import 'resource_settings_screen.dart';
-import 'lan_screen.dart';
 
 String storageSize(int bytes) {
   if (bytes < 0) return '暂不可用';
