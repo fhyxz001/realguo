@@ -249,25 +249,25 @@ class _RecommendationsScreenState extends State<RecommendationsScreen> {
                                 context,
                                 constraints.maxWidth - 32,
                               ),
-                              delegate: SliverChildBuilderDelegate(
-                                (context, index) {
-                                  final drama = _items[index];
-                                  return DramaTile(
-                                    key: ValueKey(drama.id),
-                                    drama: drama,
-                                    repository: widget.repository,
-                                    onTap: () => unawaited(
-                                      openPlaybackDirectly(
-                                        context,
-                                        drama: drama,
-                                        repository: widget.repository,
-                                        store: widget.store,
-                                      ),
+                              delegate: SliverChildBuilderDelegate((
+                                context,
+                                index,
+                              ) {
+                                final drama = _items[index];
+                                return DramaTile(
+                                  key: ValueKey(drama.id),
+                                  drama: drama,
+                                  repository: widget.repository,
+                                  onTap: () => unawaited(
+                                    openPlaybackDirectly(
+                                      context,
+                                      drama: drama,
+                                      repository: widget.repository,
+                                      store: widget.store,
                                     ),
-                                  );
-                                },
-                                childCount: _items.length,
-                              ),
+                                  ),
+                                );
+                              }, childCount: _items.length),
                             ),
                           ),
                           SliverToBoxAdapter(
@@ -286,9 +286,7 @@ class _RecommendationsScreenState extends State<RecommendationsScreen> {
                                       )
                                     : TextButton(
                                         onPressed: () => _load(force: true),
-                                        child: const Text(
-                                          '本轮推荐已看完，刷新获取新推荐',
-                                        ),
+                                        child: const Text('本轮推荐已看完，刷新获取新推荐'),
                                       ),
                               ),
                             ),

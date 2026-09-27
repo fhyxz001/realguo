@@ -31,7 +31,7 @@ jobs:
           cache-dependency-path: native/go.sum
       - uses: subosito/flutter-action@v2
         with:
-          flutter-version: '3.47.4'
+          flutter-version: '3.47.5'
           channel: stable
           cache: true
       - run: flutter pub get --enforce-lockfile
@@ -72,7 +72,7 @@ jobs:
           cache-dependency-path: native/go.sum
       - uses: subosito/flutter-action@v2
         with:
-          flutter-version: '3.47.4'
+          flutter-version: '3.47.5'
           channel: stable
           cache: true
       - run: sdkmanager 'ndk;28.2.13676358'
@@ -116,7 +116,7 @@ jobs:
           python-version: '3.12'
       - uses: subosito/flutter-action@v2
         with:
-          flutter-version: '3.47.4'
+          flutter-version: '3.47.5'
           channel: stable
           cache: true
       - uses: egor-tensin/setup-mingw@v2
@@ -155,7 +155,7 @@ jobs:
           cache-dependency-path: native/go.sum
       - uses: subosito/flutter-action@v2
         with:
-          flutter-version: '3.47.4'
+          flutter-version: '3.47.5'
           channel: stable
           cache: true
       - run: python3 scripts/build_ios.py ${{ matrix.arguments }}
