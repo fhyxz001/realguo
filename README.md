@@ -731,6 +731,8 @@ Flutter `3.47.5`、Dart `3.13.4`、Go `1.24.1+`、Python `3.10+`。Android 需�
 
 构建、CI 与本机 SDK 统一使用 Flutter `3.47.5`（Dart `3.13.4`）。格式化规则随 Dart 小版本变化，`dart format --set-exit-if-changed` 检查必须与 CI 使用同一版本，否则会因换行策略不同而误报。
 
+格式化前必须先执行 `flutter pub get`。`pubspec.yaml` 声明的语言版本是 `3.12`，该版本会写入 `.dart_tool/package_config.json` 并改变 formatter 的换行策略；缺少该文件时 formatter 回退到 SDK 默认语言版本，产出不同结果，本地与 CI 会互相判为“需要重新格式化”。校验本地是否真正一致，可在干净副本中按 CI 顺序（`flutter pub get --enforce-lockfile` 后接 `dart format --output=none --set-exit-if-changed`）复现，而不要只看本机工作目录的二次运行结果。
+
 将 Flutter、Go、Python 加入 PATH，Android 设置 `ANDROID_HOME`。构建脚本对子进程默认设置 `GOPROXY=https://goproxy.cn,direct`、`GOSUMDB=off`，不改全局配置；同名环境变量可覆盖。
 
 ~~~sh
